@@ -1,0 +1,36 @@
+# Verification after installing firmware-intel-sound
+# Generated: 2026-11-18T15:17:49+08:00
+
+$ uname -r
+6.12.117+deb13-amd64
+
+$ dpkg-query -W -f="${Package} ${Version}\n" firmware-intel-sound
+firmware-intel-sound 20250410-2
+
+$ cat /sys/devices/pci0000:00/808622A8:00/firmware_version
+v01.0b.02.02
+
+$ python3 -c "open /dev/snd/pcmC1D0p"
+PCM open OK in 0.079s
+
+$ wpctl status (audio section)
+Audio
+ ├─ Devices:
+ │      49. Built-in Audio                      [alsa]
+ │      50. Built-in Audio                      [alsa]
+ │  
+ ├─ Sinks:
+ │  *   54. Built-in Audio Speaker              [vol: 0.40]
+ │  
+ ├─ Sources:
+ │  *   55. Built-in Audio Internal Microphone  [vol: 1.00]
+ │  
+ ├─ Filters:
+
+$ wpctl inspect @DEFAULT_AUDIO_SINK@ (selected properties)
+    alsa.card_name = "chtrt5650"
+    audio.channels = "2"
+    device.profile.description = "Speaker"
+    device.profile.name = "HiFi: Speaker: sink"
+  * node.description = "Built-in Audio Speaker"
+  * node.name = "alsa_output.platform-cht-bsw-rt5645.HiFi__Speaker__sink"

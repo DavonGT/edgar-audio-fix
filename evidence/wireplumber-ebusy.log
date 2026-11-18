@@ -1,0 +1,78 @@
+# Excerpt from WirePlumber debug log showing UCM detection and PCM EBUSY
+# Source: WIREPLUMBER_DEBUG=D, captured before installing firmware-intel-sound
+
+I spa.alsa [alsa-ucm.c:1019:pa_alsa_ucm_query_profiles]: UCM available for card <<<SplitPCM=1>>>hw:1
+D spa.alsa [alsa-ucm.c:1024:pa_alsa_ucm_query_profiles]: UCM _alibpref=_ucm0003.
+I spa.alsa [alsa-ucm.c:1128:pa_alsa_ucm_get_verb]: Set UCM verb to HiFi
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got CapturePCM for device Mic2: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got PlaybackCTL for device Mic2: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got CaptureCTL for device Mic2: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got CapturePriority for device Mic2: 200
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got TQ for device Mic2: HiFi
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got JackControl for device Mic2: Headset Mic Jack
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got JackHWMute for device Mic2: Mic1
+I spa.alsa [alsa-ucm.c:510:ucm_get_device_property]: UCM file does not specify 'CaptureChannels' for device Mic2, assuming stereo.
+D spa.alsa [alsa-ucm.c:603:ucm_get_device_property]: No _conflictingdevs for device Mic2
+D spa.alsa [alsa-ucm.c:615:ucm_get_device_property]: No _supporteddevs for device Mic2
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got CapturePCM for device Mic1: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got PlaybackCTL for device Mic1: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got CaptureCTL for device Mic1: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got CapturePriority for device Mic1: 100
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got TQ for device Mic1: HiFi
+I spa.alsa [alsa-ucm.c:510:ucm_get_device_property]: UCM file does not specify 'CaptureChannels' for device Mic1, assuming stereo.
+D spa.alsa [alsa-ucm.c:603:ucm_get_device_property]: No _conflictingdevs for device Mic1
+D spa.alsa [alsa-ucm.c:615:ucm_get_device_property]: No _supporteddevs for device Mic1
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got PlaybackPCM for device Headphones: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got PlaybackCTL for device Headphones: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got PlaybackPriority for device Headphones: 200
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got CaptureCTL for device Headphones: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got TQ for device Headphones: HiFi
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got JackControl for device Headphones: Headphone Jack
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got JackHWMute for device Headphones: Speaker
+I spa.alsa [alsa-ucm.c:489:ucm_get_device_property]: UCM file does not specify 'PlaybackChannels' for device Headphones, assuming stereo.
+D spa.alsa [alsa-ucm.c:615:ucm_get_device_property]: No _supporteddevs for device Headphones
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got PlaybackPCM for device Speaker: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got PlaybackCTL for device Speaker: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got PlaybackPriority for device Speaker: 100
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got CaptureCTL for device Speaker: _ucm0003.hw:chtrt5650
+D spa.alsa [alsa-ucm.c:467:ucm_get_device_property]: Got TQ for device Speaker: HiFi
+I spa.alsa [alsa-ucm.c:489:ucm_get_device_property]: UCM file does not specify 'PlaybackChannels' for device Speaker, assuming stereo.
+D spa.alsa [alsa-ucm.c:615:ucm_get_device_property]: No _supporteddevs for device Speaker
+I spa.alsa [acp.c:1840:acp_card_new]: Found UCM profiles
+D spa.alsa [alsa-ucm.c:2004:ucm_create_mapping_direction]: UCM mapping: HiFi: Mic2: source dev Mic2
+D spa.alsa [alsa-ucm.c:2004:ucm_create_mapping_direction]: UCM mapping: HiFi: Mic1: source dev Mic1
+D spa.alsa [alsa-ucm.c:2004:ucm_create_mapping_direction]: UCM mapping: HiFi: Headphones: sink dev Headphones
+D spa.alsa [alsa-ucm.c:2004:ucm_create_mapping_direction]: UCM mapping: HiFi: Speaker: sink dev Speaker
+D spa.alsa [alsa-mixer.c:4757:pa_alsa_profile_dump]: Profile HiFi (Headphones, Mic2) (Default (Headphones, Mic2)), input=null, output=null priority=8400, supported=yes n_input_mappings=1, n_output_mappings=1
+D spa.alsa [alsa-mixer.c:4769:pa_alsa_profile_dump]: Input HiFi: Mic2: source
+D spa.alsa [alsa-mixer.c:4773:pa_alsa_profile_dump]: Output HiFi: Headphones: sink
+D spa.alsa [alsa-ucm.c:2355:ucm_create_verb_profiles]: Created profile HiFi (Headphones, Mic2) for UCM verb HiFi
+D spa.alsa [alsa-mixer.c:4757:pa_alsa_profile_dump]: Profile HiFi (Mic2, Speaker) (Default (Mic2, Speaker)), input=null, output=null priority=8300, supported=yes n_input_mappings=1, n_output_mappings=1
+D spa.alsa [alsa-mixer.c:4769:pa_alsa_profile_dump]: Input HiFi: Mic2: source
+D spa.alsa [alsa-mixer.c:4773:pa_alsa_profile_dump]: Output HiFi: Speaker: sink
+D spa.alsa [alsa-ucm.c:2355:ucm_create_verb_profiles]: Created profile HiFi (Mic2, Speaker) for UCM verb HiFi
+D spa.alsa [alsa-mixer.c:4757:pa_alsa_profile_dump]: Profile HiFi (Headphones, Mic1) (Default (Headphones, Mic1)), input=null, output=null priority=8300, supported=yes n_input_mappings=1, n_output_mappings=1
+D spa.alsa [alsa-mixer.c:4769:pa_alsa_profile_dump]: Input HiFi: Mic1: source
+D spa.alsa [alsa-mixer.c:4773:pa_alsa_profile_dump]: Output HiFi: Headphones: sink
+D spa.alsa [alsa-ucm.c:2355:ucm_create_verb_profiles]: Created profile HiFi (Headphones, Mic1) for UCM verb HiFi
+D spa.alsa [alsa-mixer.c:4757:pa_alsa_profile_dump]: Profile HiFi (Mic1, Speaker) (Default (Mic1, Speaker)), input=null, output=null priority=8200, supported=yes n_input_mappings=1, n_output_mappings=1
+D spa.alsa [alsa-mixer.c:4769:pa_alsa_profile_dump]: Input HiFi: Mic1: source
+D spa.alsa [alsa-mixer.c:4773:pa_alsa_profile_dump]: Output HiFi: Speaker: sink
+D spa.alsa [alsa-ucm.c:2355:ucm_create_verb_profiles]: Created profile HiFi (Mic1, Speaker) for UCM verb HiFi
+I spa.alsa [alsa-ucm.c:2567:ucm_probe_profile_set]: Probing profile HiFi (Headphones, Mic2)
+I spa.alsa [alsa-ucm.c:2571:ucm_probe_profile_set]: Set ucm verb to HiFi
+D spa.alsa [alsa-util.c:714:pa_alsa_open_by_device_string]: Trying _ucm0003.hw:chtrt5650 with SND_PCM_NO_AUTO_FORMAT ...
+I spa.alsa [pcm_hw.c:1803:snd_pcm_hw_open]: open '/dev/snd/pcmC1D0p' failed (-16)
+I spa.alsa [alsa-util.c:721:pa_alsa_open_by_device_string]: Error opening PCM device _ucm0003.hw:chtrt5650: Device or resource busy
+I spa.alsa [alsa-ucm.c:2591:ucm_probe_profile_set]: Profile 'HiFi (Headphones, Mic2)' mapping 'HiFi: Headphones: sink': output PCM open failed
+I spa.alsa [alsa-ucm.c:2621:ucm_probe_profile_set]: Profile HiFi (Headphones, Mic2) not supported
+I spa.alsa [alsa-ucm.c:2567:ucm_probe_profile_set]: Probing profile HiFi (Mic2, Speaker)
+I spa.alsa [alsa-ucm.c:2571:ucm_probe_profile_set]: Set ucm verb to HiFi
+D spa.alsa [alsa-util.c:714:pa_alsa_open_by_device_string]: Trying _ucm0003.hw:chtrt5650 with SND_PCM_NO_AUTO_FORMAT ...
+I spa.alsa [pcm_hw.c:1803:snd_pcm_hw_open]: open '/dev/snd/pcmC1D0p' failed (-16)
+I spa.alsa [alsa-util.c:721:pa_alsa_open_by_device_string]: Error opening PCM device _ucm0003.hw:chtrt5650: Device or resource busy
+I spa.alsa [alsa-ucm.c:2591:ucm_probe_profile_set]: Profile 'HiFi (Mic2, Speaker)' mapping 'HiFi: Speaker: sink': output PCM open failed
+I spa.alsa [alsa-ucm.c:2621:ucm_probe_profile_set]: Profile HiFi (Mic2, Speaker) not supported
+I spa.alsa [alsa-ucm.c:2567:ucm_probe_profile_set]: Probing profile HiFi (Headphones, Mic1)
+I spa.alsa [alsa-ucm.c:2571:ucm_probe_profile_set]: Set ucm verb to HiFi
+D spa.alsa [alsa-util.c:714:pa_alsa_open_by_device_string]: Trying _ucm0003.hw:chtrt5650 with SND_PCM_NO_AUTO_FORMAT ...
